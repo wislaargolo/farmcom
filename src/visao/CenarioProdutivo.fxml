@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="800.0" prefWidth="1200.0" styleClass="capaCenarioProdutivo" stylesheets="@Estilizar.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.ControladorCenario">
+   <center>
+      <HBox BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="30.0" right="30.0" />
+         </BorderPane.margin>
+         <children>
+            <Pane prefHeight="800.0" prefWidth="133.0" />
+            <VBox alignment="CENTER" prefHeight="800.0" prefWidth="1149.0">
+               <children>
+                  <Label stylesheets="@Estilizar.css" text="Cenário Produtivo">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin>
+                  </Label>
+                  <GridPane id="cbFazenda">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="NEVER" maxWidth="168.0" minWidth="10.0" prefWidth="200.0" />
+                        <ColumnConstraints hgrow="NEVER" maxWidth="707.0" minWidth="10.0" prefWidth="316.0" />
+                      <ColumnConstraints hgrow="NEVER" maxWidth="500.0" minWidth="0.0" prefWidth="204.0" />
+                      <ColumnConstraints hgrow="NEVER" maxWidth="570.0" minWidth="0.0" prefWidth="220.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="39.0" vgrow="NEVER" />
+                      <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="41.0" vgrow="NEVER" />
+                      <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="NEVER" />
+                      <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="NEVER" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Fazenda" />
+                        <Label text="Data de início" GridPane.rowIndex="1" />
+                        <Label text="Animais" GridPane.rowIndex="2" />
+                        <Label text="Forragem" GridPane.rowIndex="3" />
+                        <Label text="Quantidade de dias" GridPane.columnIndex="2" />
+                        <Label text="Quantidade de animais" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="cbFazenda" prefHeight="25.0" prefWidth="258.0" GridPane.columnIndex="1" />
+                        <ComboBox id="cbAnimais" fx:id="cbAnimais" prefWidth="258.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <ComboBox id="cbForragem" fx:id="cbForragem" prefWidth="258.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <DatePicker id="dataInicio" fx:id="dataInicio" prefHeight="25.0" prefWidth="230.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField id="tfDias" fx:id="tfDias" prefHeight="25.0" prefWidth="249.0" GridPane.columnIndex="3" />
+                        <TextField id="tfQtdAnimais" fx:id="tfQtdAnimais" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <Label text="Massa inicial" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <TextField id="tfMassaInicial" fx:id="tfMassaInicial" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <Label text="Peso médio inicial dos animais" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <TextField fx:id="tfPesoInicial" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="100.0" right="100.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  <Button id="btGerar" fx:id="btGerar" mnemonicParsing="false" onAction="#gerar" prefHeight="25.0" prefWidth="155.0" stylesheets="@Estilizar.css" text="Gerar">
+                     <VBox.margin>
+                        <Insets top="50.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>

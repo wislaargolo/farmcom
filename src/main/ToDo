@@ -1,0 +1,4 @@
+Colocar unidade de medida da área total da fazenda entre parênteses (label na tela cadastrofazenda)
+Mudar o campo sexo do cadastro do animal de TextField para Combobox com os valores pre-preenchidos
+Trabalhar a tela de cenário produtivo para que as combobox sejam preenchidas:
+*A combobox de fazendas deve mostrar todas as fazendas cadastradas, já as combobox de animais e forragem devem mostrar apenas as da fazenda selecionada anteriormente

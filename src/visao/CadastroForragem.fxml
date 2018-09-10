@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@Estilizar.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.ControladorCadForragem">
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="30.0" right="30.0" />
+         </BorderPane.margin>
+         <children>
+            <Label text="Cadastro Forragem">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="50.0" />
+               </VBox.margin>
+            </Label>
+            <GridPane prefHeight="146.0" prefWidth="540.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="NEVER" maxWidth="240.0" minWidth="10.0" prefWidth="150.0" />
+                <ColumnConstraints hgrow="NEVER" maxWidth="452.0" minWidth="10.0" prefWidth="357.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="60.0" vgrow="NEVER" />
+                <RowConstraints minHeight="10.0" prefHeight="60.0" vgrow="NEVER" />
+              </rowConstraints>
+               <children>
+                  <Label text="Espécie" />
+                  <Label text="Taxa de Acúmulo" GridPane.rowIndex="1" />
+                  <TextField fx:id="especie" GridPane.columnIndex="1" />
+                  <TextField fx:id="taxaDeAcumulo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+               <VBox.margin>
+                  <Insets left="430.0" right="300.0" />
+               </VBox.margin>
+            </GridPane>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <Button fx:id="btVoltar" mnemonicParsing="false" onAction="#voltar" prefHeight="35.0" prefWidth="50.0">
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="40.0">
+                           <image>
+                              <Image url="@img/Seta.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Pane prefHeight="100.0" prefWidth="240.0" />
+                  <HBox alignment="CENTER" spacing="20.0">
+                     <children>
+                      <Button fx:id="btAdicionar" mnemonicParsing="false" onAction="#adicionar" text="Adicionar" />
+                        <Button fx:id="btCancelar" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <styleClass>
+      <String fx:value="capaFazendas" />
+      <String fx:value="font" />
+   </styleClass>
+</BorderPane>
