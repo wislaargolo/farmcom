@@ -97,6 +97,8 @@ public class ControladorCenario implements Initializable{
     }
     
     public void refreshCombobox(Fazenda f){
+        nomeA.clear();
+        nomeFo.clear();
         nomeA.addAll(aDAO.relatorio(f.getId_fazenda()));
         nomeFo.addAll(foDAO.relatorio(f.getId_fazenda()));
         cbAnimais.setItems(nomeA);

@@ -28,6 +28,7 @@ public class BalancoForrageiro {
 		PF[0] = pesoInicial;
 		for (int i = 1; i < numdias; i++) {
 			PF[i] = PF[i - 1] + gmd;
+                     
 		}
             
 	}
