@@ -1,6 +1,8 @@
 
 package modelo;
 import java.sql.Date;
+import persistencia.AnimalDAO;
+import persistencia.FazendaDAO;
 
 public class Cenario {
     private int Id_cenario;
@@ -16,7 +18,11 @@ public class Cenario {
     private double Acumulo_cenario;
     private double Consumo_cenario;
     private double Saldo_cenario;
-
+    private String Nome_fazenda;
+    private String Raca_animal;
+    FazendaDAO fDAO = new FazendaDAO();
+    AnimalDAO aDAO = new AnimalDAO();
+    
     public Cenario(int Id_fazenda, int Id_animal, int Id_forragem, Date Data_inicio_cenario, int Qtd_dias_cenario, int Qtd_animais_cenario, double Massa_inicial_cenario, double peso_inicial) {
         this.Id_fazenda = Id_fazenda;
         this.Id_animal = Id_animal;
@@ -26,9 +32,7 @@ public class Cenario {
         this.Qtd_animais_cenario = Qtd_animais_cenario;
         this.Massa_inicial_cenario = Massa_inicial_cenario;
         this.Peso_inicial_animais = peso_inicial;
-      
     }
-    
    
 
 	public Cenario(int Id_cenario, int Id_fazenda, int Id_animal, int Id_forragem, Date Data_inicio_cenario,
@@ -48,8 +52,14 @@ public class Cenario {
                 this.Peso_inicial_animais = peso_inicial;
 		this.Saldo_cenario = Saldo_cenario;
 	}
-
-    /**
+        
+        public void dados(){
+            Fazenda f = fDAO.buscarID(Id_fazenda);
+            Animal a = aDAO.buscarID(Id_animal);
+            Nome_fazenda = f.getNome_fazenda();
+            Raca_animal = a.getRaca_animal();
+        }
+               /**
      * @return the Id_cenario
      */
     public int getId_cenario() {

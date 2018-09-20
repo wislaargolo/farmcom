@@ -60,10 +60,10 @@ public class ControladorCenarios implements Initializable{
 
     private void refreshTabela() {
     		lista.clear();
-    		lista.addAll(cDAO.relatorio());
+                lista.addAll(cDAO.relatorio());
     		cenarios.setItems(lista);
-                fazenda.setCellValueFactory(new PropertyValueFactory<Cenario, String>("Id_fazenda"));
-    		animal.setCellValueFactory(new PropertyValueFactory<Cenario, String>("Id_animal"));
+                fazenda.setCellValueFactory(new PropertyValueFactory<Cenario, String>("Nome_fazenda"));
+    		animal.setCellValueFactory(new PropertyValueFactory<Cenario, String>("Raca_animal"));
     		forragem.setCellValueFactory(new PropertyValueFactory<Cenario, String>("Id_forragem"));
     		qtdDias.setCellValueFactory(new PropertyValueFactory<Cenario, Integer>("Qtd_dias_cenario"));
                 qtdAnimais.setCellValueFactory(new PropertyValueFactory<Cenario, Integer>("Qtd_animais_cenario"));

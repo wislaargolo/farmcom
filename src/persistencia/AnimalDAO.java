@@ -14,14 +14,14 @@ public class AnimalDAO {
     private String BUSCARID = "SELECT * FROM ANIMAL WHERE ID_ANIMAL = ?";
    
     public Animal buscarID(int id) {
-        Animal f=null;
+        Animal a = null;
 		try {
 			con.conecta(); // CONECTA
 			PreparedStatement preparaInstrucao = con.getConexao().prepareStatement(BUSCARID);
 			preparaInstrucao.setInt(1, id);
 			ResultSet rs = preparaInstrucao.executeQuery(); 
 			if (rs.next()) { 
-				Animal c = new Animal(rs.getInt("ID_ANIMAL"), rs.getInt("ID_FAZENDA"),
+				a = new Animal(rs.getInt("ID_ANIMAL"), rs.getInt("ID_FAZENDA"),
 						rs.getString("CATEGORIA_ANIMAL"),rs.getString("RACA_ANIMAL"), rs.getString("SEXO_ANIMAL"),
                                                 rs.getDouble("GMD_ANIMAL"), rs.getInt("QUANTIDADE_ANIMAL"));
 			}
@@ -29,7 +29,7 @@ public class AnimalDAO {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-                return f;
+                return a;
 	}
     
 

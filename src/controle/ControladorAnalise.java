@@ -58,8 +58,8 @@ public class ControladorAnalise implements Initializable{
     @FXML
     private void voltar(){
         try {
-			BorderPane cenario = (BorderPane) FXMLLoader.load(getClass().getResource("/visao/CenarioProdutivo.fxml"));
-			ControladorCenario.controller.preencherForm(ControladorCenario.cenario);
+			BorderPane cenario = (BorderPane) FXMLLoader.load(getClass().getResource("/visao/CenarioProdutivoAlterar.fxml"));
+			ControladorCenarioAlterar.controller.preencherForm(ControladorCenario.cenario);
                         ControladorPrincipal.controller.borderPrincipal.setCenter(cenario);
                         
 		} catch (IOException e) {
@@ -75,13 +75,22 @@ public class ControladorAnalise implements Initializable{
     	double[] consumo = balanco.getCv();
     	double[] saldo = balanco.getSF();
             DecimalFormat df = new DecimalFormat("0.##");
+            String[] guardarP = new String[pesoFinal.length];
+            String[] guardarA = new String[acumulo.length];
+            String[] guardarC = new String[consumo.length];
+            String[] guardarS = new String[saldo.length];
+            
             for(int i=0; i<pesoFinal.length; i++){
-             df.format(pesoFinal[i]);
+                guardarP[i] = df.format(pesoFinal[i]).replaceAll(",", ".");
+                guardarA[i] = df.format(acumulo[i]).replaceAll(",", ".");
+                guardarC[i] = df.format(consumo[i]).replaceAll(",", ".");
+                guardarS[i] = df.format(saldo[i]).replaceAll(",", ".");
             }    
-    	tfPesoFinal.setText(Double.toString(pesoFinal[ControladorCenario.cenario.getQtd_dias_cenario()-1]));
-    	tfAcumulo.setText(Double.toString(acumulo[ControladorCenario.cenario.getQtd_dias_cenario()-1]));
-    	tfConsumoV.setText(Double.toString(consumo[ControladorCenario.cenario.getQtd_dias_cenario()-1]));
-    	tfSaldo.setText(Double.toString(saldo[ControladorCenario.cenario.getQtd_dias_cenario()-1]));
+            
+    	tfPesoFinal.setText(guardarP[ControladorCenario.cenario.getQtd_dias_cenario()-1]);
+    	tfAcumulo.setText(guardarA[ControladorCenario.cenario.getQtd_dias_cenario()-1]);
+    	tfConsumoV.setText(guardarC[ControladorCenario.cenario.getQtd_dias_cenario()-1]);
+    	tfSaldo.setText(guardarS[ControladorCenario.cenario.getQtd_dias_cenario()-1]);
         
         ObservableList<XYChart.Data<Number, Number>> data = FXCollections.<XYChart.Data<Number, Number>>observableArrayList();
             for (int i = 0; i < ControladorCenario.cenario.getQtd_dias_cenario(); i++)

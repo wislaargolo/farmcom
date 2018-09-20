@@ -22,7 +22,7 @@ public class ForragemDAO {
 			preparaInstrucao.setInt(1, id);
 			ResultSet rs = preparaInstrucao.executeQuery(); 
 			if (rs.next()) { 
-				Forragem c = new Forragem(rs.getInt("ID_FORRAGEM"), rs.getInt("ID_FAZENDA"),
+				f = new Forragem(rs.getInt("ID_FORRAGEM"), rs.getInt("ID_FAZENDA"),
 						rs.getString("ESPECIE_FORRAGEM"),rs.getFloat("TAXA_ACUMULO_FORRAGEM"));
 			}
 			con.desconecta(); // DESCONECTA

@@ -62,6 +62,7 @@ public class CenarioDAO {
 			ResultSet rs = preparaInstrucao.executeQuery(); 
 			while (rs.next()) { 
 				Cenario c = new Cenario(rs.getInt("ID_CENARIO"),rs.getInt("ID_FAZENDA"), rs.getInt("ID_ANIMAL"), rs.getInt("ID_FORRAGEM"), rs.getDate("DATA_INICIO_CENARIO"), rs.getInt("QTD_DIAS_CENARIO"), rs.getInt("QTD_ANIMAIS_CENARIO"), rs.getDouble("MASSA_INICIAL_CENARIO"), rs.getDouble("PESO_FINAL_CENARIO"),rs.getDouble("PESO_INICIAL_ANIMAIS"), rs.getDouble("ACUMULO_CENARIO"), rs.getDouble("CONSUMO_CENARIO"), rs.getDouble("SALDO_CENARIO"));
+                                c.dados();
 				lista.add(c); 
 			}
 			con.desconecta();

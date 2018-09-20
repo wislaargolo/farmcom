@@ -25,7 +25,7 @@ import persistencia.AnimalDAO;
 import persistencia.FazendaDAO;
 import persistencia.ForragemDAO;
 
-public class ControladorCenario implements Initializable{
+public class ControladorCenarioAlterar implements Initializable{
     
     ObservableList<Animal> nomeA = FXCollections.observableArrayList();
     ObservableList<Fazenda> nomeFa = FXCollections.observableArrayList();
@@ -40,7 +40,7 @@ public class ControladorCenario implements Initializable{
     public static Animal animal;
     public static Forragem forragem;
     
-    static ControladorCenario controller;
+    static ControladorCenarioAlterar controller;
     Cenario c;
     
     @FXML 
@@ -83,7 +83,7 @@ public class ControladorCenario implements Initializable{
     	int qtdAnimais = Integer.parseInt(tfQtdAnimais.getText());
     	double massaInicial = Double.parseDouble(tfMassaInicial.getText());
     	double pesoInicial = Double.parseDouble(tfPesoInicial.getText());
-    	cenario = new Cenario(idFazenda, animal.getId_animal(), forragem.getId_forragem(), data, qtdDias, qtdAnimais, massaInicial, pesoInicial );
+    	ControladorCenario.controller.cenario = new Cenario(idFazenda, animal.getId_animal(), forragem.getId_forragem(), data, qtdDias, qtdAnimais, massaInicial, pesoInicial );
         try {
 			BorderPane analise = (BorderPane) FXMLLoader.load(getClass().getResource("/visao/AnaliseCenario.fxml"));
 			
@@ -95,30 +95,9 @@ public class ControladorCenario implements Initializable{
       
     }
     
-    public void refreshCombobox(Fazenda f){
-        nomeA.clear();
-        nomeFo.clear();
-        nomeA.addAll(aDAO.relatorio(f.getId_fazenda()));
-        nomeFo.addAll(foDAO.relatorio(f.getId_fazenda()));
-        cbAnimais.setItems(nomeA);
-        cbForragem.setItems(nomeFo);
-    }
- 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         controller = this;  
-        nomeFa.addAll(faDAO.relatorio());
-        cbFazenda.setItems(nomeFa);
-		
-		cbFazenda.setOnAction(new EventHandler<ActionEvent>() { 
-
-			@Override
-			public void handle(ActionEvent arg0) {
-				Fazenda f = cbFazenda.getSelectionModel().getSelectedItem();
-				refreshCombobox(f);
-			}
-			
-		});
     }
     
 }

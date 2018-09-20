@@ -22,7 +22,7 @@ public class FazendaDAO {
 			preparaInstrucao.setInt(1, id);
 			ResultSet rs = preparaInstrucao.executeQuery(); 
 			if (rs.next()) { 
-				Fazenda c = new Fazenda(rs.getInt("ID_FAZENDA"),
+				f = new Fazenda(rs.getInt("ID_FAZENDA"),
 						rs.getString("NOME_FAZENDA"),rs.getFloat("AREA_FAZENDA"));
 			}
 			con.desconecta(); // DESCONECTA
