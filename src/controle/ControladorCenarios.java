@@ -6,6 +6,7 @@ import modelo.Cenario;
 import persistencia.CenarioDAO;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,7 +17,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
-import modelo.Animal;
 
 public class ControladorCenarios implements Initializable{
     CenarioDAO cDAO = new CenarioDAO();
@@ -60,11 +60,16 @@ public class ControladorCenarios implements Initializable{
 
     private void refreshTabela() {
     		lista.clear();
-                lista.addAll(cDAO.relatorio());
+                ArrayList<Cenario> temp = cDAO.relatorio();
+                for(Cenario c : temp){
+                    c.dados();
+                }
+                lista.addAll(temp);
+                
     		cenarios.setItems(lista);
                 fazenda.setCellValueFactory(new PropertyValueFactory<Cenario, String>("Nome_fazenda"));
     		animal.setCellValueFactory(new PropertyValueFactory<Cenario, String>("Raca_animal"));
-    		forragem.setCellValueFactory(new PropertyValueFactory<Cenario, String>("Id_forragem"));
+    		forragem.setCellValueFactory(new PropertyValueFactory<Cenario, String>("especieForragem"));
     		qtdDias.setCellValueFactory(new PropertyValueFactory<Cenario, Integer>("Qtd_dias_cenario"));
                 qtdAnimais.setCellValueFactory(new PropertyValueFactory<Cenario, Integer>("Qtd_animais_cenario"));
                 saldo.setCellValueFactory(new PropertyValueFactory<Cenario, Double>("Saldo_cenario"));

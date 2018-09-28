@@ -1,10 +1,12 @@
-
 package modelo;
+
 import java.sql.Date;
 import persistencia.AnimalDAO;
 import persistencia.FazendaDAO;
+import persistencia.ForragemDAO;
 
 public class Cenario {
+
     private int Id_cenario;
     private int Id_fazenda;
     private int Id_animal;
@@ -12,7 +14,7 @@ public class Cenario {
     private Date Data_inicio_cenario;
     private int Qtd_dias_cenario;
     private int Qtd_animais_cenario;
-    private double  Massa_inicial_cenario;
+    private double Massa_inicial_cenario;
     private double Peso_inicial_animais;
     private double Peso_final_cenario;
     private double Acumulo_cenario;
@@ -20,9 +22,11 @@ public class Cenario {
     private double Saldo_cenario;
     private String Nome_fazenda;
     private String Raca_animal;
+    private String especieForragem;
     FazendaDAO fDAO = new FazendaDAO();
     AnimalDAO aDAO = new AnimalDAO();
-    
+    ForragemDAO foDAO = new ForragemDAO();
+
     public Cenario(int Id_fazenda, int Id_animal, int Id_forragem, Date Data_inicio_cenario, int Qtd_dias_cenario, int Qtd_animais_cenario, double Massa_inicial_cenario, double peso_inicial) {
         this.Id_fazenda = Id_fazenda;
         this.Id_animal = Id_animal;
@@ -33,33 +37,47 @@ public class Cenario {
         this.Massa_inicial_cenario = Massa_inicial_cenario;
         this.Peso_inicial_animais = peso_inicial;
     }
-   
 
-	public Cenario(int Id_cenario, int Id_fazenda, int Id_animal, int Id_forragem, Date Data_inicio_cenario,
-			int Qtd_dias_cenario, int Qtd_animais_cenario, double Massa_inicial_cenario, double Peso_final_cenario, double peso_inicial,
-			double Acumulo_cenario, double Consumo_cenario, double Saldo_cenario) {
-		this.Id_cenario = Id_cenario;
-		this.Id_fazenda = Id_fazenda;
-		this.Id_animal = Id_animal;
-		this.Id_forragem = Id_forragem;
-		this.Data_inicio_cenario = Data_inicio_cenario;
-		this.Qtd_dias_cenario = Qtd_dias_cenario;
-		this.Qtd_animais_cenario = Qtd_animais_cenario;
-		this.Massa_inicial_cenario = Massa_inicial_cenario;
-		this.Peso_final_cenario = Peso_final_cenario;
-		this.Acumulo_cenario = Acumulo_cenario;
-		this.Consumo_cenario = Consumo_cenario;
-                this.Peso_inicial_animais = peso_inicial;
-		this.Saldo_cenario = Saldo_cenario;
-	}
-        
-        public void dados(){
-            Fazenda f = fDAO.buscarID(Id_fazenda);
-            Animal a = aDAO.buscarID(Id_animal);
-            Nome_fazenda = f.getNome_fazenda();
-            Raca_animal = a.getRaca_animal();
-        }
-               /**
+    public Cenario(int Id_cenario, int Id_fazenda, int Id_animal, int Id_forragem, Date Data_inicio_cenario,
+            int Qtd_dias_cenario, int Qtd_animais_cenario, double Massa_inicial_cenario, double Peso_final_cenario, double peso_inicial,
+            double Acumulo_cenario, double Consumo_cenario, double Saldo_cenario) {
+        this.Id_cenario = Id_cenario;
+        this.Id_fazenda = Id_fazenda;
+        this.Id_animal = Id_animal;
+        this.Id_forragem = Id_forragem;
+        this.Data_inicio_cenario = Data_inicio_cenario;
+        this.Qtd_dias_cenario = Qtd_dias_cenario;
+        this.Qtd_animais_cenario = Qtd_animais_cenario;
+        this.Massa_inicial_cenario = Massa_inicial_cenario;
+        this.Peso_final_cenario = Peso_final_cenario;
+        this.Acumulo_cenario = Acumulo_cenario;
+        this.Consumo_cenario = Consumo_cenario;
+        this.Peso_inicial_animais = peso_inicial;
+        this.Saldo_cenario = Saldo_cenario;
+    }
+
+    public void dados() {
+        Fazenda f = fDAO.buscarID(Id_fazenda);
+        Animal a = aDAO.buscarID(Id_animal);
+        Forragem fo = foDAO.buscarID(Id_forragem);
+        Nome_fazenda = f.getNome_fazenda();
+        Raca_animal = a.getRaca_animal();
+        especieForragem = fo.getEspecie_forragem();
+    }
+
+    public String getNome_fazenda() {
+        return Nome_fazenda;
+    }
+
+    public String getRaca_animal() {
+        return Raca_animal;
+    }
+
+    public String getEspecieForragem() {
+        return especieForragem;
+    }
+
+    /**
      * @return the Id_cenario
      */
     public int getId_cenario() {
@@ -227,17 +245,12 @@ public class Cenario {
         this.Saldo_cenario = Saldo_cenario;
     }
 
+    public double getPeso_inicial_animais() {
+        return Peso_inicial_animais;
+    }
 
-
-	public double getPeso_inicial_animais() {
-		return Peso_inicial_animais;
-	}
-
-
-
-	public void setPeso_inicial_animais(double peso_inicial) {
-		Peso_inicial_animais = peso_inicial;
-	}
-
+    public void setPeso_inicial_animais(double peso_inicial) {
+        Peso_inicial_animais = peso_inicial;
+    }
 
 }

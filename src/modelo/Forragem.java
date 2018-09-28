@@ -19,6 +19,12 @@ public class Forragem {
         this.Especie_forragem = Especie_forragem;
         this.Taxa_acumulo_forragem = Taxa_acumulo_forragem;
     }
+
+    public Forragem(int Id_forragem) {
+        this.Id_forragem = Id_forragem;
+    }
+    
+    
     
     public String toString(){
         return Especie_forragem;

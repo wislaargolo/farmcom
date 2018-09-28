@@ -29,9 +29,15 @@ public class Animal {
         GMD_animal = GMD;
         Quantidade_animal = qtdAnimal;
     }
+
+    public Animal(int Id_animal) {
+        this.Id_animal = Id_animal;
+    }
+     
+     
      
     public String toString(){
-        return Raca_animal;
+        return Categoria_animal;
     }
 
     /**

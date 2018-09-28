@@ -17,6 +17,12 @@ public class Fazenda {
         this.Nome_fazenda = Nome_fazenda;
         this.Area_fazenda = Area_fazenda;
     }
+
+    public Fazenda(int Id_fazenda) {
+        this.Id_fazenda = Id_fazenda;
+    }
+    
+    
     
     public String toString(){
         return Nome_fazenda;
