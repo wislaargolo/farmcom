@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -16,11 +11,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="borderPrincipal" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" styleClass="capaFazendas" stylesheets="@Estilizar.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.ControladorFazendas">
+<BorderPane fx:id="borderPrincipal" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@Estilizar.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.ControladorFazendas">
    <center>
-      <VBox alignment="CENTER" prefHeight="800.0" prefWidth="1149.0" spacing="18.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="642.0" prefWidth="945.0" spacing="18.0" styleClass="criarCaixa" BorderPane.alignment="CENTER">
          <children>
-            <Label prefHeight="32.0" prefWidth="166.0" text="Fazendas">
+            <Label prefHeight="6.0" prefWidth="166.0" text="     Fazendas">
                <font>
                   <Font size="20.0" />
                </font>
@@ -28,8 +23,7 @@
                   <Insets />
                </VBox.margin>
             </Label>
-            <Pane prefHeight="12.0" prefWidth="1125.0" />
-            <TableView fx:id="fazendas" prefHeight="385.0" prefWidth="585.0">
+            <TableView fx:id="fazendas" prefHeight="385.0" prefWidth="605.0">
                <columns>
                   <TableColumn fx:id="idFazenda" maxWidth="150.0" prefWidth="100.0" text="ID Fazenda" />
                   <TableColumn fx:id="nomeDaFazenda" maxWidth="600.0" prefWidth="400.0" text="Nome da Fazenda" />
@@ -39,10 +33,10 @@
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
                <VBox.margin>
-                  <Insets left="270.0" right="270.0" />
+                  <Insets left="110.0" right="110.0" />
                </VBox.margin>
             </TableView>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+            <HBox alignment="CENTER" prefHeight="67.0" prefWidth="1125.0" spacing="15.0">
                <children>
                   <Button fx:id="adicionar" mnemonicParsing="false" onAction="#adicionar" prefHeight="49.0" prefWidth="77.0" text="Adicionar" />
                   <Button fx:id="alterar" mnemonicParsing="false" onAction="#alterar" prefHeight="49.0" prefWidth="77.0" text="Alterar" />
@@ -51,8 +45,17 @@
             </HBox>
          </children>
          <BorderPane.margin>
-            <Insets bottom="20.0" left="45.0" right="30.0" />
+            <Insets bottom="180.0" left="45.0" right="30.0" />
          </BorderPane.margin>
       </VBox>
    </center>
+   <top>
+      <Pane prefHeight="68.0" prefWidth="1200.0" BorderPane.alignment="CENTER" />
+   </top>
+   <left>
+      <Pane prefHeight="732.0" prefWidth="154.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <Pane prefHeight="732.0" prefWidth="135.0" BorderPane.alignment="CENTER" />
+   </right>
 </BorderPane>

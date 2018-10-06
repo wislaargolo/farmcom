@@ -1,24 +1,14 @@
-.capaAnaliseCenario
-{
-
--fx-background-image: url('../visao/img/AnaliseCenario.png');
--fx-background-position: center;
--fx-background-repeat: no-repeat;
-
-}
-
 .aplicarBarra
 {
-    -fx-background-image: url('../visao/img/BarraM.png');
+    -fx-background-image: url('../visao/img/Barra.png');
     -fx-background-repeat: no-repeat;
     -fx-background-attachment: fixed;
-
 }
 
 .capaPrincipal
 {
 
--fx-background-image: url('../visao/img/FundoVazio.png');
+-fx-background-image: url('../visao/img/Principal.png');
 -fx-background-position: center;
 -fx-background-repeat: no-repeat;
 -fx-background-attachment: fixed;
@@ -26,51 +16,19 @@
 }
 
 
-.capaAnimais
+
+.criarCaixa
 {
-
--fx-background-image: url('../visao/img/Animais.png');
--fx-background-position: center;
+-fx-background-color: rgba(240,240,240,0.8);
 -fx-background-repeat: no-repeat;
--fx-background-attachment: fixed;
+-fx-size: 35;
 
 }
-
-.capaFazendas
-{
-
--fx-background-image: url('../visao/img/Fazendas.png');
--fx-background-position: center;
--fx-background-repeat: no-repeat;
--fx-background-attachment: fixed;
-
-}
-
-.capaCenarioProdutivo
-{
-
--fx-background-image: url('../visao/img/CenarioProdutivo.png');
--fx-background-position: center;
--fx-background-repeat: no-repeat;
--fx-background-attachment: fixed;
-
-}
-
-.capaSimulacoes
-{
-
--fx-background-image: url('../visao/img/Simulacoes.png');
--fx-background-position: center;
--fx-background-repeat: no-repeat;
--fx-background-attachment: fixed;
-
-}
-
 
 .button
 {
   -fx-background-color: rgb(19, 144, 113);
-  -fx-padding: 12px;
+  -fx-padding: 11px;
   -fx-text-fill: white;
   -fx-border-color: white;
  

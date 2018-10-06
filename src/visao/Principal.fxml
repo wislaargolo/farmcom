@@ -6,11 +6,11 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<BorderPane fx:id="borderPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="840.0" prefWidth="1200.0" styleClass="capaPrincipal" stylesheets="@Estilizar.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.ControladorPrincipal">
+<BorderPane fx:id="borderPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="840.0" prefWidth="1200.0" styleClass="capaPrincipal" stylesheets="@Estilizar.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.ControladorPrincipal">
    <top>
       <HBox alignment="TOP_RIGHT" prefHeight="96.0" prefWidth="1200.0" spacing="5.0" styleClass="aplicarBarra" stylesheets="@Estilizar.css" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btInicio" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#inicio" text="Início">
+            <Button fx:id="btInicio" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#inicio" prefHeight="34.0" prefWidth="60.0" text="Início">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
