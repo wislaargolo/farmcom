@@ -15,8 +15,6 @@
 
 }
 
-
-
 .criarCaixa
 {
 -fx-background-color: rgba(240,240,240,0.8);
@@ -31,12 +29,11 @@
   -fx-padding: 11px;
   -fx-text-fill: white;
   -fx-border-color: white;
- 
 }
 
 .button:hover
 {
   -fx-background-color: rgb(29, 154, 123);
-  -fx-padding: 13px;
+  -fx-padding: 12px;
  
 }
