@@ -7,6 +7,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -16,7 +17,7 @@
          <children>
             <Label text="Nome da Fazenda" textAlignment="RIGHT">
                <VBox.margin>
-                  <Insets />
+                  <Insets top="10.0" />
                </VBox.margin>
                <font>
                   <Font name="Calibri" size="20.0" />
@@ -51,7 +52,7 @@
             </HBox>
             <Button fx:id="btVoltar" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#voltar" prefHeight="35.0" prefWidth="50.0" VBox.vgrow="NEVER">
                <VBox.margin>
-                  <Insets />
+                  <Insets bottom="10.0" />
                </VBox.margin>
                <graphic>
                   <ImageView id="btVoltar" fitHeight="21.0" fitWidth="37.0">
@@ -62,6 +63,21 @@
                </graphic>
             </Button>
          </children>
+         <BorderPane.margin>
+            <Insets bottom="100.0" left="100.0" />
+         </BorderPane.margin>
       </VBox>
    </center>
+   <left>
+      <Pane prefHeight="456.0" prefWidth="171.0" BorderPane.alignment="CENTER" />
+   </left>
+   <top>
+      <Pane prefHeight="144.0" prefWidth="1200.0" BorderPane.alignment="CENTER" />
+   </top>
+   <right>
+      <Pane prefHeight="456.0" prefWidth="313.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </bottom>
 </BorderPane>

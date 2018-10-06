@@ -74,7 +74,7 @@
                   <TableColumn fx:id="tcSaldo" prefWidth="200.0" text="Saldo Forragem" />
               </columns>
                <VBox.margin>
-                  <Insets left="170.0" right="170.0" top="30.0" />
+                  <Insets bottom="10.0" left="170.0" right="170.0" top="30.0" />
                </VBox.margin>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -83,9 +83,10 @@
                   <Insets bottom="10.0" />
                </padding>
             </TableView>
+            <Pane prefHeight="5.0" prefWidth="1044.0" />
          </children>
          <BorderPane.margin>
-            <Insets bottom="61.0" left="10.0" right="10.0" />
+            <Insets bottom="61.0" left="5.0" right="5.0" />
          </BorderPane.margin>
          <effect>
             <ColorAdjust />
@@ -96,9 +97,12 @@
       <Pane prefHeight="19.0" prefWidth="1200.0" BorderPane.alignment="CENTER" />
    </top>
    <left>
-      <Pane prefHeight="730.0" prefWidth="66.0" BorderPane.alignment="CENTER" />
+      <Pane prefHeight="681.0" prefWidth="68.0" BorderPane.alignment="CENTER" />
    </left>
    <right>
       <Pane prefHeight="730.0" prefWidth="70.0" BorderPane.alignment="CENTER" />
    </right>
+   <bottom>
+      <Pane prefHeight="100.0" prefWidth="1200.0" BorderPane.alignment="CENTER" />
+   </bottom>
 </BorderPane>

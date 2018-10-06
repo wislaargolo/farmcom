@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" styleClass="capaFazendas" stylesheets="@Estilizar.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.ControladorAlterarForragem">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.ControladorAlterarForragem">
    <center>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="criarCaixa" stylesheets="@Estilizar.css" BorderPane.alignment="CENTER">
          <children>
@@ -43,7 +43,7 @@
                   <TextField fx:id="taxaAcumulo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                </children>
                <VBox.margin>
-                  <Insets left="400.0" right="300.0" />
+                  <Insets left="80.0" right="25.0" />
                </VBox.margin>
             </GridPane>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="font">
@@ -69,6 +69,21 @@
                </VBox.margin>
             </HBox>
          </children>
+         <BorderPane.margin>
+            <Insets bottom="75.0" left="5.0" />
+         </BorderPane.margin>
       </VBox>
    </center>
+   <left>
+      <Pane prefHeight="800.0" prefWidth="196.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <Pane prefHeight="216.0" prefWidth="1200.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <top>
+      <Pane prefHeight="132.0" prefWidth="1200.0" BorderPane.alignment="CENTER" />
+   </top>
 </BorderPane>
