@@ -13,7 +13,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.ControladorEditar">
    <center>
-      <VBox alignment="CENTER" prefHeight="704.0" prefWidth="1098.0" styleClass="criarCaixa" stylesheets="@Estilizar.css" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="704.0" prefWidth="1098.0" styleClass="criarCaixa" stylesheets="@EstilizarEditarFazenda.css" BorderPane.alignment="CENTER">
          <children>
             <Label text="Nome da Fazenda" textAlignment="RIGHT">
                <VBox.margin>
@@ -33,18 +33,18 @@
                         <Insets />
                      </HBox.margin>
                      <graphic>
-                        <ImageView id="btAnimaisFazenda">
+                        <ImageView fitHeight="156.0" fitWidth="154.0">
                            <image>
-                              <Image url="@img/Animais%20Icon.png" />
+                              <Image url="@../../../../../Downloads/grass.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
                   <Button id="btForragemFazenda" fx:id="btForragemFazenda" mnemonicParsing="false" onAction="#mostrarForragem" prefHeight="193.0" prefWidth="210.0">
                      <graphic>
-                        <ImageView>
+                        <ImageView fitHeight="155.0" fitWidth="153.0">
                            <image>
-                              <Image url="@img/Forragem%20Icon.png" />
+                              <Image url="@../../../../../Downloads/sheep.png" />
                            </image>
                         </ImageView>
                      </graphic></Button>
