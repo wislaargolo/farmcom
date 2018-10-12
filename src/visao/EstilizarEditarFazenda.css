@@ -25,10 +25,9 @@
 
 .button
 {
-  -fx-background-color: rgb(175, 175, 175);
+  -fx-background-color: rgb(225, 225, 225);
   -fx-padding: 11px;
   -fx-text-fill: white;
-  -fx-border-color: white;
   -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
 }
 
