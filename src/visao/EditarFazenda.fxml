@@ -35,7 +35,7 @@
                      <graphic>
                         <ImageView fitHeight="192.0" fitWidth="200.0">
                            <image>
-                              <Image url="@img/BotaoMolde.png" />
+                              <Image url="@img/btAnimais.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -44,7 +44,7 @@
                      <graphic>
                         <ImageView fitHeight="192.0" fitWidth="200.0">
                            <image>
-                              <Image url="@img/BotaoMolde%20-%20Copia%20(4).png" />
+                              <Image url="@img/btForragens.png" />
                            </image>
                         </ImageView>
                      </graphic></Button>
