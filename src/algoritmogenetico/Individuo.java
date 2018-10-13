@@ -1,5 +1,6 @@
 package algoritmogenetico;
 
+import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -72,6 +73,8 @@ public class Individuo{
 	}
 
 	public double getAptidao() {
+            DecimalFormat formato = new DecimalFormat("0.##");      
+            aptidao = Double.parseDouble(formato.format(aptidao).replaceAll(",", "."));
 		return aptidao;
 	}
 

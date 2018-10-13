@@ -1,6 +1,8 @@
 
 package modelo;
 
+import java.text.DecimalFormat;
+
 public class Fazenda {
     private int Id_fazenda;
     private String Nome_fazenda;
@@ -60,6 +62,8 @@ public class Fazenda {
      * @return the Area_fazenda
      */
     public double getArea_fazenda() {
+        DecimalFormat formato = new DecimalFormat("0.##");      
+        Area_fazenda = Double.parseDouble(formato.format(Area_fazenda).replaceAll(",", "."));
         return Area_fazenda;
     }
 

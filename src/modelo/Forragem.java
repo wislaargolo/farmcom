@@ -1,6 +1,8 @@
 
 package modelo;
 
+import java.text.DecimalFormat;
+
 public class Forragem {
     private int Id_forragem;
     private int Id_fazenda;
@@ -55,6 +57,8 @@ public class Forragem {
     }
 
     public double getTaxa_acumulo_forragem() {
+        DecimalFormat formato = new DecimalFormat("0.##");      
+        Taxa_acumulo_forragem = Double.parseDouble(formato.format(Taxa_acumulo_forragem).replaceAll(",", "."));
         return Taxa_acumulo_forragem;
     }
 
