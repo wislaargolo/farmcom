@@ -25,15 +25,14 @@
 
 .button
 {
-  -fx-background-color: rgb(225, 225, 225);
+  -fx-background-color: rgba(225, 225, 225, 0.001);
   -fx-padding: 11px;
   -fx-text-fill: white;
-  -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+  -fx-border-color: rgba(225, 225, 225, 0.001);
 }
 
 .button:hover
 {
   -fx-background-color: rgb(140, 170, 165);
   -fx-padding: 12px;
- 
 }

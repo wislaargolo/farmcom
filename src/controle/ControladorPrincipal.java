@@ -36,7 +36,7 @@ public class ControladorPrincipal implements Initializable{
 	private void fazenda() {
 		try 
                 {
-                    BorderPane fazenda = (BorderPane) FXMLLoader.load(getClass().getResource("/visao/Fazendas.fxml"));
+                    BorderPane fazenda = (BorderPane) FXMLLoader.load(getClass().getResource("/visao/EditarFazenda.fxml"));
                     borderPrincipal.setCenter(fazenda);
                         
 		} catch (IOException e) {
