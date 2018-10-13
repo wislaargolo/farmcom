@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -66,15 +67,53 @@ public class ControladorAlterarAnimal implements Initializable{
 		}	
     }
     
+    public boolean isNumeric () {
+    try {
+        Double.parseDouble (gmd.getText()); 
+        Integer.parseInt(quantidade.getText());
+        return true;
+    } catch (NumberFormatException ex) {
+        return false;
+    }
+  }
+     
+    public boolean isString () {
+    try {
+        Integer.parseInt(categoria.getText());
+        Integer.parseInt(raça.getText());
+        return false;
+    } catch (NumberFormatException ex) {
+        return true;
+    }
+  }
+    
+    
+    
     @FXML
     private void alterar(){
-        a.setCategoria_animal(categoria.getText());
-        a.setRaca_animal(raça.getText());
-        a.setSexo_animal(sexo.getValue());
-        a.setGMD_animal(Double.parseDouble(gmd.getText()));
-        a.setQuantidade_animal(Integer.parseInt(quantidade.getText()));
-        aDAO.alterar(a);
-        limparTextFields();
+        if(categoria.getText().isEmpty() || raça.getText().isEmpty() || sexo.getValue()==null || gmd.getText().isEmpty() || quantidade.getText().isEmpty()) {
+		Alert alert = new Alert(Alert.AlertType.INFORMATION);
+		alert.setTitle("Atenção");
+		alert.setHeaderText("Algum campo está em branco");
+		alert.setContentText("Preencha os campos");
+		alert.showAndWait();
+        }else{
+            if(isNumeric()==false || isString()==false){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+		alert.setTitle("Atenção");
+		alert.setHeaderText("Erro de valor em algum campo");
+		alert.setContentText("Preencha os campos com valores válidos");
+		alert.showAndWait();
+            }else{ 
+                a.setCategoria_animal(categoria.getText());
+                a.setRaca_animal(raça.getText());
+                a.setSexo_animal(sexo.getValue());
+                a.setGMD_animal(Double.parseDouble(gmd.getText()));
+                a.setQuantidade_animal(Integer.parseInt(quantidade.getText()));
+                aDAO.alterar(a);
+                limparTextFields();
+            }
+        }
     }
     
     @FXML
