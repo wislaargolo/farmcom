@@ -26,15 +26,15 @@
 .button
 {
   -fx-background-color: rgb(19, 144, 113);
-  -fx-padding: 11px;
+  -fx-padding: 13px;
   -fx-text-fill: white;
   -fx-border-color: white;
 }
 
 .button:hover
 {
-  -fx-background-color: rgb(29, 154, 123);
-  -fx-padding: 12px;
+  -fx-background-color: rgb(34, 159, 128);
+  -fx-padding: 14px;
  
 }
 
